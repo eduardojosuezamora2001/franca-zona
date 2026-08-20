@@ -3,7 +3,12 @@
     {
       "id": "zf-01",
       "nombre": "Coyol Free Zone",
-      "ubicacion": "Alajuela",
+      "provincia": "Alajuela",
+      "canton": "Alajuela",
+      "ubicacion": "Alajuela, Alajuela",
+      "direccion": "Coyol, Alajuela, Costa Rica",
+      "lat": 9.9922,
+      "lng": -84.2818,
       "inversionMinima": 1500000,
       "empleosMinimos": 50,
       "sectoresPermitidos": [
@@ -15,7 +20,12 @@
     {
       "id": "zf-02",
       "nombre": "America Free Zone (AFZ)",
-      "ubicacion": "Heredia",
+      "provincia": "Heredia",
+      "canton": "Heredia",
+      "ubicacion": "Heredia, Heredia",
+      "direccion": "San Francisco, Heredia, Costa Rica",
+      "lat": 9.9723,
+      "lng": -84.1704,
       "inversionMinima": 1000000,
       "empleosMinimos": 30,
       "sectoresPermitidos": [
@@ -27,7 +37,12 @@
     {
       "id": "zf-03",
       "nombre": "UltraPARK II",
-      "ubicacion": "Heredia",
+      "provincia": "Heredia",
+      "canton": "Heredia",
+      "ubicacion": "Heredia, Heredia",
+      "direccion": "Lagunilla, Heredia, Costa Rica",
+      "lat": 9.9735,
+      "lng": -84.1711,
       "inversionMinima": 800000,
       "empleosMinimos": 25,
       "sectoresPermitidos": [
@@ -39,7 +54,12 @@
     {
       "id": "zf-04",
       "nombre": "Zona Franca La Lima",
-      "ubicacion": "Cartago",
+      "provincia": "Cartago",
+      "canton": "Cartago",
+      "ubicacion": "Cartago, Cartago",
+      "direccion": "La Lima, Cartago, Costa Rica",
+      "lat": 9.8512,
+      "lng": -83.9456,
       "inversionMinima": 1200000,
       "empleosMinimos": 40,
       "sectoresPermitidos": [
@@ -49,13 +69,18 @@
       ]
     },
     {
-      "id": "zf-49",
+      "id": "zf-58",
       "nombre": "Esparfa Free Zone",
-      "ubicacion": "Heredia",
+      "provincia": "Puntarenas",
+      "canton": "Puntarenas",
+      "ubicacion": "Puntarenas, Puntarenas",
+      "direccion": "asmdkpamdpkaskdm",
+      "lat": 9.98269,
+      "lng": -84.75551,
       "inversionMinima": 300000,
-      "empleosMinimos": 1800,
+      "empleosMinimos": 600,
       "sectoresPermitidos": [
-        "Software"
+        "test"
       ]
     }
   ],
