@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZoFranca CR — Detalle de Zona Franca</title>
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/temas.css">
+  <link rel="stylesheet" href="/styles/componentes.css">
+  <!-- Leaflet CSS para visor de mapas -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    .detail-map-container {
+      width: 100%;
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--color-primario);
+      box-shadow: var(--sombre-tarjeta);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .detail-map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app-shell">
+    <main class="main-content">
+      <div class="page-header">
+        <div>
+          <a href="/modulos/admin/admin-zonas-francas.html" style="font-size: 0.9rem;">&larr; Volver a Gestión de Zonas Francas</a>
+          <h1 class="page-title" id="lbl-zf-nombre">Detalle de Zona Franca</h1>
+          <p class="page-subtitle" id="lbl-zf-ubicacion">Ubicación y parámetros de admisión</p>
+        </div>
+        <div id="badge-zf-provincia">
+          <!-- Badge de Provincia / Cantón -->
+        </div>
+      </div>
+
+      <div id="contenedor-detalle-zf">
+        <!-- Renderizado dinámico -->
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/modulos/admin/admin-zona-detalle.js"></script>
+</body>
+</html>

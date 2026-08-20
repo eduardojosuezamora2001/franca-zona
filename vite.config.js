@@ -11,6 +11,7 @@ export default defineConfig({
         dashboardSolicitudes: resolve(__dirname, 'modulos/solicitudes/dashboard-solicitudes.html'),
         solicitudDetalle: resolve(__dirname, 'modulos/solicitudes/solicitud-detalle.html'),
         adminZonasFrancas: resolve(__dirname, 'modulos/admin/admin-zonas-francas.html'),
+        adminZonaDetalle: resolve(__dirname, 'modulos/admin/admin-zona-detalle.html'),
         reporteCumplimiento: resolve(__dirname, 'modulos/cumplimiento/reporte-cumplimiento.html'),
         panelAlertas: resolve(__dirname, 'modulos/cumplimiento/panel-alertas.html'),
       },

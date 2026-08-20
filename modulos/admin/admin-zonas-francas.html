@@ -7,6 +7,49 @@
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/temas.css">
   <link rel="stylesheet" href="/styles/componentes.css">
+  <!-- Leaflet CSS para interacción de mapas con clic directo (Fallback sin API Key) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    .map-container {
+      width: 100%;
+      height: 320px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid var(--color-primario);
+      margin-top: 0.75rem;
+      background-color: var(--color-superficie-elevada);
+      position: relative;
+      z-index: 1;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .coord-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background-color: var(--color-superficie-elevada);
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      border: var(--grosor-borde) solid var(--color-borde);
+    }
+    .map-instruction {
+      background-color: var(--color-superficie-elevada);
+      border: var(--grosor-borde) solid var(--color-borde);
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.825rem;
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
   <div id="app-shell">
@@ -14,33 +57,80 @@
       <div class="page-header">
         <div>
           <h1 class="page-title" data-i18n="nav.admin_zones">Gestión de Zonas Francas y Criterios de Admisión (RF-01)</h1>
-          <p class="page-subtitle">Configure las zonas francas registradas y sus parámetros mínimos (inversión, empleos y sectores)</p>
+          <p class="page-subtitle">Configure las zonas francas, parámetros mínimos y selección de ubicación haciendo clic directamente en el mapa</p>
         </div>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
-        <!-- Formulario de Registro / Alta RF-01 -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1.5rem;">
+        <!-- Formulario de Registro con Selección de Provincia/Cantón y Punto Interactivo en Mapa -->
         <div class="card">
-          <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">➕ Registrar Nueva Zona Franca</h3>
+          <h3 style="font-size: 1.2rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            🗺️ Registrar Nueva Zona Franca
+          </h3>
           <form id="form-nueva-zf">
             <div class="form-group">
               <label class="form-label" for="zf-nombre">Nombre de la Zona Franca *</label>
               <input type="text" id="zf-nombre" class="form-control" placeholder="Ej. Coyol Free Zone Extension" required>
             </div>
 
-            <div class="form-group">
-              <label class="form-label" for="zf-ubicacion">Ubicación / Provincia *</label>
-              <input type="text" id="zf-ubicacion" class="form-control" placeholder="Ej. Alajuela / Heredia / Cartago" required>
+            <!-- Select Cascabeado de Provincia y Cantón -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="zf-provincia">Provincia *</label>
+                <select id="zf-provincia" class="form-control" required>
+                  <!-- Opciones dinámicas -->
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="zf-canton">Cantón *</label>
+                <select id="zf-canton" class="form-control" required>
+                  <!-- Opciones dinámicas según provincia -->
+                </select>
+              </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="zf-inversion">Inversión Mínima Requerida (USD) *</label>
-              <input type="number" id="zf-inversion" class="form-control" placeholder="Ej. 1500000" min="100000" step="50000" required>
+              <label class="form-label" for="zf-direccion">Dirección / Distrito o Señas Exactas</label>
+              <input type="text" id="zf-direccion" class="form-control" placeholder="Ej. Frente a autopista Bernardo Soto, El Coyol">
             </div>
 
+            <!-- Selección de Punto Clic en el Mapa -->
             <div class="form-group">
-              <label class="form-label" for="zf-empleos">Empleos Mínimos Proyectados *</label>
-              <input type="number" id="zf-empleos" class="form-control" placeholder="Ej. 45" min="5" step="1" required>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <label class="form-label" style="margin:0;">📍 Selección de Punto Geográfico (Haga clic en el mapa)</label>
+                <span class="coord-badge" id="badge-punto-mapa">🎯 Haga clic en el mapa</span>
+              </div>
+              <div id="mapa-formulario-container" class="map-container">
+                <!-- Se actualiza dinámicamente -->
+              </div>
+              <div class="map-instruction">
+                <span>👉 <strong>Haga clic en cualquier punto del mapa</strong> o arrastre el marcador para fijar las coordenadas exactas.</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="zf-lat">Latitud (Coordenada N) *</label>
+                <input type="number" id="zf-lat" class="form-control" placeholder="9.9922" step="any" value="9.9922" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="zf-lng">Longitud (Coordenada W) *</label>
+                <input type="number" id="zf-lng" class="form-control" placeholder="-84.2818" step="any" value="-84.2818" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="zf-inversion">Inversión Mínima Requerida (USD) *</label>
+                <input type="number" id="zf-inversion" class="form-control" placeholder="Ej. 1500000" min="100000" step="50000" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="zf-empleos">Empleos Mínimos *</label>
+                <input type="number" id="zf-empleos" class="form-control" placeholder="Ej. 45" min="5" step="1" required>
+              </div>
             </div>
 
             <div class="form-group">
@@ -49,12 +139,12 @@
             </div>
 
             <button type="submit" id="btn-guardar-zf" class="btn btn-primary" style="width: 100%;">
-              💾 Guardar Zona Franca
+              💾 Guardar Zona Franca con Ubicación Selección
             </button>
           </form>
         </div>
 
-        <!-- Lista de Zonas Francas Existentes -->
+        <!-- Lista de Zonas Francas Registradas (Sin mapa en la tarjeta) -->
         <div class="card">
           <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">🏢 Zonas Francas Registradas</h3>
           <div id="contenedor-lista-zf">
