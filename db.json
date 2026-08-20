@@ -6,7 +6,11 @@
       "ubicacion": "Alajuela",
       "inversionMinima": 1500000,
       "empleosMinimos": 50,
-      "sectoresPermitidos": ["Dispositivos Médicos", "Manufactura Avanzada", "Tecnología"]
+      "sectoresPermitidos": [
+        "Dispositivos Médicos",
+        "Manufactura Avanzada",
+        "Tecnología"
+      ]
     },
     {
       "id": "zf-02",
@@ -14,7 +18,11 @@
       "ubicacion": "Heredia",
       "inversionMinima": 1000000,
       "empleosMinimos": 30,
-      "sectoresPermitidos": ["Tecnología", "Servicios Compartidos", "Software"]
+      "sectoresPermitidos": [
+        "Tecnología",
+        "Servicios Compartidos",
+        "Software"
+      ]
     },
     {
       "id": "zf-03",
@@ -22,7 +30,11 @@
       "ubicacion": "Heredia",
       "inversionMinima": 800000,
       "empleosMinimos": 25,
-      "sectoresPermitidos": ["Tecnología", "Servicios Compartidos", "Finanzas"]
+      "sectoresPermitidos": [
+        "Tecnología",
+        "Servicios Compartidos",
+        "Finanzas"
+      ]
     },
     {
       "id": "zf-04",
@@ -30,7 +42,21 @@
       "ubicacion": "Cartago",
       "inversionMinima": 1200000,
       "empleosMinimos": 40,
-      "sectoresPermitidos": ["Manufactura Avanzada", "Dispositivos Médicos", "Agroindustria"]
+      "sectoresPermitidos": [
+        "Manufactura Avanzada",
+        "Dispositivos Médicos",
+        "Agroindustria"
+      ]
+    },
+    {
+      "id": "zf-49",
+      "nombre": "Esparfa Free Zone",
+      "ubicacion": "Heredia",
+      "inversionMinima": 300000,
+      "empleosMinimos": 1800,
+      "sectoresPermitidos": [
+        "Software"
+      ]
     }
   ],
   "empresas": [
@@ -73,7 +99,10 @@
       "puntajeIA": 92,
       "clasificacionIA": "Recomendada",
       "justificacionIA": "La empresa cumple holgadamente con los requisitos de Coyol Free Zone: inversión supera el mínimo por $1,000,000 USD (+66%), proyección de empleos supera el mínimo (+70%), y el sector de Dispositivos Médicos es prioritario en esta zona franca.",
-      "adjuntosSimulados": ["plan_inversion.pdf", "estudio_impacto_ambiental.pdf"],
+      "adjuntosSimulados": [
+        "plan_inversion.pdf",
+        "estudio_impacto_ambiental.pdf"
+      ],
       "historialTrazabilidad": [
         {
           "fecha": "2026-08-15T10:30:00.000Z",
@@ -105,7 +134,10 @@
       "puntajeIA": 68,
       "clasificacionIA": "Revisar",
       "justificacionIA": "La inversión proyectada ($950,000 USD) se encuentra ligeramente por debajo del mínimo requerido por AFZ ($1,000,000 USD, -5%), aunque la proyección de empleos (28) está muy cerca del mínimo exigido (30). Se sugiere revisión por parte del analista para evaluar plan de aceleración.",
-      "adjuntosSimulados": ["estados_financieros.pdf", "propuesta_tecnica.pdf"],
+      "adjuntosSimulados": [
+        "estados_financieros.pdf",
+        "propuesta_tecnica.pdf"
+      ],
       "historialTrazabilidad": [
         {
           "fecha": "2026-08-18T14:15:00.000Z",
@@ -137,7 +169,9 @@
       "puntajeIA": 35,
       "clasificacionIA": "Rechazada",
       "justificacionIA": "El sector Agroindustria no está dentro de los sectores permitidos para UltraPARK II. Además, la inversión proyectada ($400,000 USD) es un 50% inferior al mínimo requerido ($800,000 USD) y la cantidad de empleos es insuficiente.",
-      "adjuntosSimulados": ["perfil_proyecto.pdf"],
+      "adjuntosSimulados": [
+        "perfil_proyecto.pdf"
+      ],
       "historialTrazabilidad": [
         {
           "fecha": "2026-08-19T09:00:00.000Z",
@@ -152,6 +186,63 @@
           "detalle": "Clasificación 'Rechazada' asignada con puntaje 35/100."
         }
       ]
+    }
+  ],
+  "reportesCumplimiento": [
+    {
+      "id": "REP-2026-001",
+      "solicitudId": "SOL-2026-001",
+      "empresaId": "emp-101",
+      "nombreEmpresa": "BioMed Solutions CR S.A.",
+      "nombreZonaFranca": "Coyol Free Zone",
+      "periodo": "2026-Q2",
+      "empleosReales": 90,
+      "empleosComprometidos": 85,
+      "cumplimientoEmpleosPct": 105.8,
+      "inversionEjecutada": 2600000,
+      "inversionComprometida": 2500000,
+      "cumplimientoInversionPct": 104,
+      "exportaciones": 4800000,
+      "fechaEnvio": "2026-07-10T11:00:00.000Z",
+      "estadoCumplimiento": "En Regla",
+      "alertaGenerada": false
+    },
+    {
+      "id": "REP-2026-002",
+      "solicitudId": "SOL-2026-002",
+      "empresaId": "emp-102",
+      "nombreEmpresa": "CyberTech Global Ltda.",
+      "nombreZonaFranca": "America Free Zone (AFZ)",
+      "periodo": "2026-Q2",
+      "empleosReales": 18,
+      "empleosComprometidos": 28,
+      "cumplimientoEmpleosPct": 64.2,
+      "inversionEjecutada": 700000,
+      "inversionComprometida": 950000,
+      "cumplimientoInversionPct": 73.6,
+      "exportaciones": 1200000,
+      "fechaEnvio": "2026-07-12T15:30:00.000Z",
+      "estadoCumplimiento": "Incumplimiento",
+      "alertaGenerada": true,
+      "detalleAlerta": "Alerta Crítica: Empleos reales (18) están a un 64.2% del compromiso original (28) e inversión ejecutada ($700,000 USD) al 73.6% de lo pactado."
+    }
+  ],
+  "alertas": [
+    {
+      "id": "ALT-2026-001",
+      "reporteId": "REP-2026-002",
+      "empresaId": "emp-102",
+      "nombreEmpresa": "CyberTech Global Ltda.",
+      "nombreZonaFranca": "America Free Zone (AFZ)",
+      "periodo": "2026-Q2",
+      "fechaDeteccion": "2026-07-12T15:31:00.000Z",
+      "tipoIncumplimiento": "Empleos e Inversión por debajo del compromiso",
+      "empleosComprometidos": 28,
+      "empleosReales": 18,
+      "inversionComprometida": 950000,
+      "inversionEjecutada": 700000,
+      "gravedad": "Alta",
+      "estadoAlerta": "Activa"
     }
   ]
 }

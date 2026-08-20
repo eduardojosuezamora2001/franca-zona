@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZoFranca CR — Reporte Periódico de Cumplimiento</title>
+  <script type="module" crossorigin src="/assets/reporteCumplimiento-kKZ6sqlt.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/navbar-DLFwcji6.js">
+  <link rel="modulepreload" crossorigin href="/assets/http-DIGBQfHA.js">
+  <link rel="modulepreload" crossorigin href="/assets/solicitudes.service-ConByWzl.js">
+  <link rel="modulepreload" crossorigin href="/assets/cumplimiento.service-C5k1rC1b.js">
+  <link rel="stylesheet" crossorigin href="/assets/navbar-CHFqEPMg.css">
+</head>
+<body>
+  <div id="app-shell">
+    <main class="main-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title" data-i18n="nav.compliance">Reporte Periódico de Cumplimiento (RF-06)</h1>
+          <p class="page-subtitle">Envíe las métricas ejecutadas de su empresa para la verificación automatizada de compromisos (RF-07)</p>
+        </div>
+      </div>
+
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <form id="form-reporte-cumplimiento">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="rep-solicitud">Solicitud Aprobada / Proyecto *</label>
+              <select id="rep-solicitud" class="form-control" required>
+                <option value="">-- Seleccione una solicitud --</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="rep-periodo">Período del Reporte *</label>
+              <select id="rep-periodo" class="form-control" required>
+                <option value="2026-Q1">2026 — Primer Trimestre (Q1)</option>
+                <option value="2026-Q2" selected>2026 — Segundo Trimestre (Q2)</option>
+                <option value="2026-Q3">2026 — Tercer Trimestre (Q3)</option>
+                <option value="2026-Q4">2026 — Cuarto Trimestre (Q4)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Resumen de Compromiso Original -->
+          <div id="box-compromiso-original" style="background-color: var(--color-superficie-elevada); border-left: 4px solid var(--color-primario); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; display: none;">
+            <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem;">📋 Compromisos Originales Aprobados:</h4>
+            <div style="font-size: 0.9rem; display: flex; gap: 2rem;">
+              <div>Inversión Comprometida: <strong id="lbl-inv-comprometida">$0</strong></div>
+              <div>Empleos Comprometidos: <strong id="lbl-emp-comprometidos">0</strong></div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="rep-inversion">Inversión Ejecutada Real (USD) *</label>
+              <input type="number" id="rep-inversion" class="form-control" placeholder="Ej. 2600000" min="0" step="1000" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="rep-empleos">Empleos Directos Reales *</label>
+              <input type="number" id="rep-empleos" class="form-control" placeholder="Ej. 90" min="0" step="1" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="rep-exportaciones">Monto de Exportaciones Realizadas (USD) *</label>
+            <input type="number" id="rep-exportaciones" class="form-control" placeholder="Ej. 4800000" min="0" step="5000" required>
+          </div>
+
+          <!-- Previsualización de Cumplimiento (RF-07) -->
+          <div id="box-previz-cumplimiento" class="card" style="background-color: var(--color-superficie); border: 2px dashed var(--color-acento); display: none; margin-bottom: 1.5rem;">
+            <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">📊 Comparación Automatizada de Cumplimiento:</h4>
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.925rem;">
+              <div>Cumplimiento Inversión: <strong id="prev-inv-pct">0%</strong></div>
+              <div>Cumplimiento Empleos: <strong id="prev-emp-pct">0%</strong></div>
+              <div id="prev-estado-alerta" style="font-weight: 700;"></div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 1rem;">
+            <button type="submit" id="btn-enviar-reporte" class="btn btn-primary" style="padding: 0.75rem 2rem;">
+              📤 Enviar Reporte de Cumplimiento
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

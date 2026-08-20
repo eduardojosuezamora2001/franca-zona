@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZoFranca CR — Alertas y Resumen PROCOMER</title>
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/temas.css">
+  <link rel="stylesheet" href="/styles/componentes.css">
+</head>
+<body>
+  <div id="app-shell">
+    <main class="main-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title" data-i18n="nav.alerts">Alertas de Incumplimiento y Resumen PROCOMER</h1>
+          <p class="page-subtitle">Detección automatizada de déficit en compromisos (RF-08) y consolidado para PROCOMER (RF-09)</p>
+        </div>
+        <div>
+          <a href="/modulos/cumplimiento/reporte-cumplimiento.html" class="btn btn-secondary">+ Enviar Nuevo Reporte</a>
+        </div>
+      </div>
+
+      <!-- Resumen Consolidado PROCOMER (RF-09) -->
+      <div class="card" style="border: 2px solid var(--color-primario); background-color: var(--color-superficie);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+          <h3 style="font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+            🇨🇷 Resumen Consolidado de Cumplimiento (Simulación PROCOMER)
+          </h3>
+          <button id="btn-exportar-procomer" class="btn btn-primary">
+            📄 Exportar Informe a PROCOMER
+          </button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+          <div style="background-color: var(--color-superficie-elevada); padding: 1rem; border-radius: 8px;">
+            <small style="color: var(--color-texto-secundario);">Inversión Total Ejecutada</small>
+            <div id="procomer-inv-total" style="font-size: 1.35rem; font-weight: 800; color: var(--color-primario);">$0</div>
+            <small id="procomer-inv-pct" style="color: var(--color-texto-secundario);">Cumplimiento: 0%</small>
+          </div>
+
+          <div style="background-color: var(--color-superficie-elevada); padding: 1rem; border-radius: 8px;">
+            <small style="color: var(--color-texto-secundario);">Empleos Directos Totales</small>
+            <div id="procomer-emp-total" style="font-size: 1.35rem; font-weight: 800; color: var(--color-primario);">0</div>
+            <small id="procomer-emp-pct" style="color: var(--color-texto-secundario);">Cumplimiento: 0%</small>
+          </div>
+
+          <div style="background-color: var(--color-superficie-elevada); padding: 1rem; border-radius: 8px;">
+            <small style="color: var(--color-texto-secundario);">Monto Total Exportaciones</small>
+            <div id="procomer-exp-total" style="font-size: 1.35rem; font-weight: 800; color: #166534;">$0</div>
+            <small style="color: var(--color-texto-secundario);">Divisas generadas</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seccion de Alertas de Incumplimiento (RF-08) -->
+      <div class="card">
+        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; color: #991B1B;">
+          🚨 Alertas de Incumplimiento de Compromisos (RF-08)
+        </h3>
+        <p style="font-size: 0.9rem; color: var(--color-texto-secundario); margin-bottom: 1.25rem;">
+          Empresas cuyos reportes periódicos registran empleos o inversión ejecutada por debajo del umbral del 85% pactado en la solicitud original.
+        </p>
+
+        <div id="contenedor-alertas">
+          <!-- Renderizado dinámico -->
+        </div>
+      </div>
+
+      <!-- Tabla de Todos los Reportes -->
+      <div class="card">
+        <h3 style="font-size: 1.15rem; margin-bottom: 1rem;">📊 Desglose de Reportes Periódicos Recibidos</h3>
+        <div id="contenedor-tabla-reportes">
+          <!-- Renderizado dinámico -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/modulos/cumplimiento/panel-alertas.js"></script>
+</body>
+</html>

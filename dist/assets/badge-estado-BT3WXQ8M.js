@@ -1,1 +1,0 @@
-import{t as r}from"./navbar-CAVEdXR4.js";function n(a){let t="recomendada",e="status.recommended";a==="Revisar"?(t="revisar",e="status.review"):a==="Rechazada"?(t="rechazada",e="status.rejected"):a==="Pendiente"&&(t="revisar",e="status.pending");const s=r(e,a);return`<span class="badge-estado badge-estado--${t}" data-i18n="${e}">${s}</span>`}export{n as r};
