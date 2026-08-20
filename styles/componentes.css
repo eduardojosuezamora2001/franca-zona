@@ -1,0 +1,400 @@
+/* Componentes CSS - ZoFranca CR */
+
+/* Navbar Component */
+.navbar {
+  background-color: var(--color-superficie);
+  border-bottom: var(--grosor-borde) solid var(--color-borde);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--sombre-tarjeta);
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar__logo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-primario);
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar__badge-rol {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  background-color: var(--color-superficie-elevada);
+  color: var(--color-texto-secundario);
+  border: var(--grosor-borde) solid var(--color-borde);
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.navbar__links {
+  display: flex;
+  list-style: none;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.navbar__links a {
+  color: var(--color-texto-secundario);
+  font-weight: 500;
+  font-size: 0.925rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+}
+
+.navbar__links a.active, .navbar__links a:hover {
+  color: var(--color-primario);
+  background-color: var(--color-superficie-elevada);
+  text-decoration: none;
+}
+
+.navbar__acciones {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  background-color: var(--color-superficie);
+  color: var(--color-texto);
+  border: var(--grosor-borde) solid var(--color-borde);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn-logout {
+  padding: 0.4rem 0.8rem;
+  background-color: transparent;
+  color: var(--color-texto-secundario);
+  border: var(--grosor-borde) solid var(--color-borde);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.btn-logout:hover {
+  background-color: var(--color-superficie-elevada);
+  color: var(--color-texto);
+}
+
+/* Badge de Estado */
+.badge-estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: var(--grosor-borde) solid transparent;
+}
+
+.badge-estado--recomendada {
+  background-color: var(--estado-recomendada-bg);
+  color: var(--estado-recomendada-texto);
+  border-color: var(--estado-recomendada-borde);
+}
+
+.badge-estado--revisar {
+  background-color: var(--estado-revisar-bg);
+  color: var(--estado-revisar-texto);
+  border-color: var(--estado-revisar-borde);
+}
+
+.badge-estado--rechazada {
+  background-color: var(--estado-rechazada-bg);
+  color: var(--estado-rechazada-texto);
+  border-color: var(--estado-rechazada-borde);
+}
+
+/* Tarjetas y Contenedores */
+.card {
+  background-color: var(--color-superficie);
+  border: var(--grosor-borde) solid var(--color-borde);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--sombre-tarjeta);
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Tablas */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border: var(--grosor-borde) solid var(--color-borde);
+  border-radius: 10px;
+  background-color: var(--color-superficie);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.table th {
+  background-color: var(--color-superficie-elevada);
+  color: var(--color-texto-encabezado);
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  border-bottom: var(--grosor-borde) solid var(--color-borde);
+}
+
+.table td {
+  padding: 0.85rem 1rem;
+  border-bottom: var(--grosor-borde) solid var(--color-borde);
+  color: var(--color-texto);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background-color: var(--color-superficie-elevada);
+}
+
+/* Formularios */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--color-texto-encabezado);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  border: var(--grosor-borde) solid var(--color-borde);
+  background-color: var(--color-superficie);
+  color: var(--color-texto);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-primario);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--color-primario);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primario-hover);
+}
+
+.btn-secondary {
+  background-color: var(--color-superficie-elevada);
+  color: var(--color-texto);
+  border: var(--grosor-borde) solid var(--color-borde);
+}
+
+.btn-secondary:hover {
+  filter: brightness(0.95);
+}
+
+.btn-success {
+  background-color: #166534;
+  color: #FFFFFF;
+}
+
+.btn-danger {
+  background-color: #991B1B;
+  color: #FFFFFF;
+}
+
+.btn-warning {
+  background-color: #92400E;
+  color: #FFFFFF;
+}
+
+/* Barra de Afinidad IA (AI Score Meter) */
+.ai-score-card {
+  background-color: var(--color-superficie);
+  border: 2px solid var(--color-acento);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ai-score-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.ai-score-number {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-primario);
+}
+
+.ai-progress-track {
+  width: 100%;
+  height: 14px;
+  background-color: var(--color-superficie-elevada);
+  border-radius: 9999px;
+  overflow: hidden;
+  border: var(--grosor-borde) solid var(--color-borde);
+  margin-bottom: 1rem;
+}
+
+.ai-progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.8s ease-in-out;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background-color: var(--color-superficie);
+  border: var(--grosor-borde) solid var(--color-borde);
+  border-radius: 12px;
+  padding: 1.75rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* Spinner & Toast */
+#spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid var(--color-superficie-elevada);
+  border-top-color: var(--color-primario);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+#toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 2000;
+}
+
+.toast {
+  padding: 0.85rem 1.25rem;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: slideIn 0.3s ease;
+}
+
+.toast--success { background-color: #166534; }
+.toast--error { background-color: #991B1B; }
+.toast--info { background-color: #1E5AA8; }
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

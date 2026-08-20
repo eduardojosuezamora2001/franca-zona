@@ -1,0 +1,157 @@
+{
+  "zonasFrancas": [
+    {
+      "id": "zf-01",
+      "nombre": "Coyol Free Zone",
+      "ubicacion": "Alajuela",
+      "inversionMinima": 1500000,
+      "empleosMinimos": 50,
+      "sectoresPermitidos": ["Dispositivos Médicos", "Manufactura Avanzada", "Tecnología"]
+    },
+    {
+      "id": "zf-02",
+      "nombre": "America Free Zone (AFZ)",
+      "ubicacion": "Heredia",
+      "inversionMinima": 1000000,
+      "empleosMinimos": 30,
+      "sectoresPermitidos": ["Tecnología", "Servicios Compartidos", "Software"]
+    },
+    {
+      "id": "zf-03",
+      "nombre": "UltraPARK II",
+      "ubicacion": "Heredia",
+      "inversionMinima": 800000,
+      "empleosMinimos": 25,
+      "sectoresPermitidos": ["Tecnología", "Servicios Compartidos", "Finanzas"]
+    },
+    {
+      "id": "zf-04",
+      "nombre": "Zona Franca La Lima",
+      "ubicacion": "Cartago",
+      "inversionMinima": 1200000,
+      "empleosMinimos": 40,
+      "sectoresPermitidos": ["Manufactura Avanzada", "Dispositivos Médicos", "Agroindustria"]
+    }
+  ],
+  "empresas": [
+    {
+      "id": "emp-101",
+      "nombre": "BioMed Solutions CR S.A.",
+      "cedulaJuridica": "3-101-789456",
+      "sector": "Dispositivos Médicos",
+      "contacto": "contacto@biomedcr.com"
+    },
+    {
+      "id": "emp-102",
+      "nombre": "CyberTech Global Ltda.",
+      "cedulaJuridica": "3-102-654321",
+      "sector": "Tecnología",
+      "contacto": "info@cybertech.cr"
+    },
+    {
+      "id": "emp-103",
+      "nombre": "AgroInnovación del Caribe",
+      "cedulaJuridica": "3-103-112233",
+      "sector": "Agroindustria",
+      "contacto": "admin@agrocaribe.com"
+    }
+  ],
+  "solicitudes": [
+    {
+      "id": "SOL-2026-001",
+      "empresaId": "emp-101",
+      "nombreEmpresa": "BioMed Solutions CR S.A.",
+      "cedulaJuridica": "3-101-789456",
+      "sector": "Dispositivos Médicos",
+      "zonaFrancaId": "zf-01",
+      "nombreZonaFranca": "Coyol Free Zone",
+      "inversionProyectada": 2500000,
+      "empleosProyectados": 85,
+      "descripcionProyecto": "Planta de ensamblaje de catéteres de alta precisión y dispositivos de diagnóstico vascular.",
+      "fechaEnvio": "2026-08-15T10:30:00.000Z",
+      "estado": "Recomendada",
+      "puntajeIA": 92,
+      "clasificacionIA": "Recomendada",
+      "justificacionIA": "La empresa cumple holgadamente con los requisitos de Coyol Free Zone: inversión supera el mínimo por $1,000,000 USD (+66%), proyección de empleos supera el mínimo (+70%), y el sector de Dispositivos Médicos es prioritario en esta zona franca.",
+      "adjuntosSimulados": ["plan_inversion.pdf", "estudio_impacto_ambiental.pdf"],
+      "historialTrazabilidad": [
+        {
+          "fecha": "2026-08-15T10:30:00.000Z",
+          "usuario": "BioMed Solutions CR S.A. (Empresa)",
+          "accion": "Solicitud enviada",
+          "detalle": "Ingreso inicial de la solicitud en la plataforma."
+        },
+        {
+          "fecha": "2026-08-15T10:31:00.000Z",
+          "usuario": "Sistema IA",
+          "accion": "Evaluación automatizada",
+          "detalle": "Clasificación automática recomendada con puntaje 92/100."
+        }
+      ]
+    },
+    {
+      "id": "SOL-2026-002",
+      "empresaId": "emp-102",
+      "nombreEmpresa": "CyberTech Global Ltda.",
+      "cedulaJuridica": "3-102-654321",
+      "sector": "Tecnología",
+      "zonaFrancaId": "zf-02",
+      "nombreZonaFranca": "America Free Zone (AFZ)",
+      "inversionProyectada": 950000,
+      "empleosProyectados": 28,
+      "descripcionProyecto": "Centro de desarrollo de software para ciberseguridad y soporte cloud regional.",
+      "fechaEnvio": "2026-08-18T14:15:00.000Z",
+      "estado": "Revisar",
+      "puntajeIA": 68,
+      "clasificacionIA": "Revisar",
+      "justificacionIA": "La inversión proyectada ($950,000 USD) se encuentra ligeramente por debajo del mínimo requerido por AFZ ($1,000,000 USD, -5%), aunque la proyección de empleos (28) está muy cerca del mínimo exigido (30). Se sugiere revisión por parte del analista para evaluar plan de aceleración.",
+      "adjuntosSimulados": ["estados_financieros.pdf", "propuesta_tecnica.pdf"],
+      "historialTrazabilidad": [
+        {
+          "fecha": "2026-08-18T14:15:00.000Z",
+          "usuario": "CyberTech Global Ltda. (Empresa)",
+          "accion": "Solicitud enviada",
+          "detalle": "Ingreso inicial de la solicitud en la plataforma."
+        },
+        {
+          "fecha": "2026-08-18T14:16:00.000Z",
+          "usuario": "Sistema IA",
+          "accion": "Evaluación automatizada",
+          "detalle": "Clasificación 'Revisar' asignada con puntaje 68/100."
+        }
+      ]
+    },
+    {
+      "id": "SOL-2026-003",
+      "empresaId": "emp-103",
+      "nombreEmpresa": "AgroInnovación del Caribe",
+      "cedulaJuridica": "3-103-112233",
+      "sector": "Agroindustria",
+      "zonaFrancaId": "zf-03",
+      "nombreZonaFranca": "UltraPARK II",
+      "inversionProyectada": 400000,
+      "empleosProyectados": 12,
+      "descripcionProyecto": "Procesamiento de concentrados de frutas tropicales para exportación a Europa.",
+      "fechaEnvio": "2026-08-19T09:00:00.000Z",
+      "estado": "Rechazada",
+      "puntajeIA": 35,
+      "clasificacionIA": "Rechazada",
+      "justificacionIA": "El sector Agroindustria no está dentro de los sectores permitidos para UltraPARK II. Además, la inversión proyectada ($400,000 USD) es un 50% inferior al mínimo requerido ($800,000 USD) y la cantidad de empleos es insuficiente.",
+      "adjuntosSimulados": ["perfil_proyecto.pdf"],
+      "historialTrazabilidad": [
+        {
+          "fecha": "2026-08-19T09:00:00.000Z",
+          "usuario": "AgroInnovación del Caribe (Empresa)",
+          "accion": "Solicitud enviada",
+          "detalle": "Ingreso inicial de la solicitud en la plataforma."
+        },
+        {
+          "fecha": "2026-08-19T09:01:00.000Z",
+          "usuario": "Sistema IA",
+          "accion": "Evaluación automatizada",
+          "detalle": "Clasificación 'Rechazada' asignada con puntaje 35/100."
+        }
+      ]
+    }
+  ]
+}

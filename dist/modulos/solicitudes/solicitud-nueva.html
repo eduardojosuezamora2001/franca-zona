@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZoFranca CR — Nueva Solicitud de Instalación</title>
+  <script type="module" crossorigin src="/assets/solicitudNueva-BM-NppA2.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/navbar-CAVEdXR4.js">
+  <link rel="modulepreload" crossorigin href="/assets/solicitudes.service-M5hAAMlH.js">
+  <link rel="stylesheet" crossorigin href="/assets/navbar-CHFqEPMg.css">
+</head>
+<body>
+  <div id="app-shell">
+    <main class="main-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title" data-i18n="form.new_request_title">Formulario de Solicitud de Instalación</h1>
+          <p class="page-subtitle">Complete los parámetros requeridos para la evaluación automatizada por IA y clasificación inicial</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <form id="form-nueva-solicitud">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="nombreEmpresa" data-i18n="form.company_name">Nombre de la Empresa *</label>
+              <input type="text" id="nombreEmpresa" class="form-control" placeholder="Ej. Medical Devices CR S.A." required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="cedulaJuridica" data-i18n="form.tax_id">Cédula Jurídica *</label>
+              <input type="text" id="cedulaJuridica" class="form-control" placeholder="3-101-XXXXXX" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="sector" data-i18n="form.sector">Sector Industrial *</label>
+              <select id="sector" class="form-control" required>
+                <option value="" data-i18n="form.select_sector">-- Seleccione un sector --</option>
+                <option value="Dispositivos Médicos">Dispositivos Médicos</option>
+                <option value="Tecnología">Tecnología / Software</option>
+                <option value="Servicios Compartidos">Servicios Compartidos</option>
+                <option value="Manufactura Avanzada">Manufactura Avanzada</option>
+                <option value="Agroindustria">Agroindustria</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="zonaFrancaId" data-i18n="form.zone">Zona Franca Deseada *</label>
+              <select id="zonaFrancaId" class="form-control" required>
+                <option value="" data-i18n="form.select_zone">-- Seleccione una Zona Franca --</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="inversionProyectada" data-i18n="form.investment">Inversión Proyectada (USD) *</label>
+              <input type="number" id="inversionProyectada" class="form-control" placeholder="Ej. 1500000" min="10000" step="1000" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="empleosProyectados" data-i18n="form.jobs">Empleos Directos Proyectados *</label>
+              <input type="number" id="empleosProyectados" class="form-control" placeholder="Ej. 65" min="1" step="1" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="descripcionProyecto" data-i18n="form.description">Descripción del Proyecto</label>
+            <textarea id="descripcionProyecto" class="form-control" rows="4" placeholder="Describa el objetivo de la planta u oficina, líneas de producción y mercados de exportación proyectados..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" data-i18n="form.files">Documentos Adjuntos (Simulación)</label>
+            <input type="file" id="adjuntos" class="form-control" multiple>
+            <small style="color: var(--color-texto-secundario);">Formatos aceptados: PDF, DOCX, XLSX (máximo 10MB)</small>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 2rem;">
+            <a href="/modulos/solicitudes/solicitud-historial.html" class="btn btn-secondary" data-i18n="common.cancel">Cancelar</a>
+            <button type="submit" id="btn-enviar" class="btn btn-primary" data-i18n="form.submit">
+              🚀 Enviar Solicitud y Evaluar con IA
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

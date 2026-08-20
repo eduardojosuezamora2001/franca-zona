@@ -1,0 +1,15 @@
+{
+  "name": "zofranca-cr",
+  "version": "1.0.0",
+  "description": "Plataforma web modular para la gestión de solicitudes de instalación y cumplimiento en zonas francas de Costa Rica",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "server": "json-server --watch db.json --port 3000"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.4",
+    "vite": "^5.1.0"
+  }
+}

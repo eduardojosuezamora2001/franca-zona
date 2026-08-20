@@ -1,0 +1,126 @@
+/* Sistema de Temas CSS - ZoFranca CR */
+
+/* 1. Tema Claro (Light) */
+:root, :root[data-tema="claro"] {
+  --color-fondo: #F8FAFC;
+  --color-superficie: #FFFFFF;
+  --color-superficie-elevada: #F1F5F9;
+  --color-texto: #1E293B;
+  --color-texto-encabezado: #0F172A;
+  --color-texto-secundario: #64748B;
+  --color-primario: #1E5AA8;
+  --color-primario-hover: #16437E;
+  --color-acento: #0EA5E9;
+  --color-borde: #E2E8F0;
+  --grosor-borde: 1px;
+
+  /* Colores semánticos */
+  --estado-recomendada-bg: #DCFCE7;
+  --estado-recomendada-texto: #166534;
+  --estado-recomendada-borde: #86EFAC;
+
+  --estado-revisar-bg: #FEF3C7;
+  --estado-revisar-texto: #92400E;
+  --estado-revisar-borde: #FDE047;
+
+  --estado-rechazada-bg: #FEE2E2;
+  --estado-rechazada-texto: #991B1B;
+  --estado-rechazada-borde: #FCA5A5;
+
+  --fuente-titulo: 'Inter', sans-serif;
+  --fuente-cuerpo: 'Inter', sans-serif;
+  --sombre-tarjeta: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* 2. Tema Oscuro (Dark) */
+:root[data-tema="oscuro"] {
+  --color-fondo: #0F172A;
+  --color-superficie: #1E293B;
+  --color-superficie-elevada: #334155;
+  --color-texto: #E2E8F0;
+  --color-texto-encabezado: #F8FAFC;
+  --color-texto-secundario: #94A3B8;
+  --color-primario: #38BDF8;
+  --color-primario-hover: #7DD3FC;
+  --color-acento: #818CF8;
+  --color-borde: #334155;
+  --grosor-borde: 1px;
+
+  --estado-recomendada-bg: #064E3B;
+  --estado-recomendada-texto: #A7F3D0;
+  --estado-recomendada-borde: #059669;
+
+  --estado-revisar-bg: #78350F;
+  --estado-revisar-texto: #FDE68A;
+  --estado-revisar-borde: #D97706;
+
+  --estado-rechazada-bg: #7F1D1D;
+  --estado-rechazada-texto: #FECACA;
+  --estado-rechazada-borde: #DC2626;
+
+  --fuente-titulo: 'Inter', sans-serif;
+  --fuente-cuerpo: 'Inter', sans-serif;
+  --sombre-tarjeta: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* 3. Tema Institucional Zona Franca (Marfil + Azul Marino + Dorado) */
+:root[data-tema="institucional"] {
+  --color-fondo: #FDFBF6;
+  --color-superficie: #FFFFFF;
+  --color-superficie-elevada: #F5F1E6;
+  --color-texto: #1A2340;
+  --color-texto-encabezado: #0A1128;
+  --color-texto-secundario: #5A647E;
+  --color-primario: #1A2340;
+  --color-primario-hover: #0E1428;
+  --color-acento: #C9A24B;
+  --color-borde: #E2DAC8;
+  --grosor-borde: 1px;
+
+  --estado-recomendada-bg: #E8F5E9;
+  --estado-recomendada-texto: #1B5E20;
+  --estado-recomendada-borde: #A5D6A7;
+
+  --estado-revisar-bg: #FFF8E1;
+  --estado-revisar-texto: #F57F17;
+  --estado-revisar-borde: #FFE082;
+
+  --estado-rechazada-bg: #FFEBEE;
+  --estado-rechazada-texto: #B71C1C;
+  --estado-rechazada-borde: #EF9A9A;
+
+  --fuente-titulo: 'Georgia', 'Times New Roman', serif;
+  --fuente-cuerpo: 'Inter', sans-serif;
+  --sombre-tarjeta: 0 4px 10px rgba(26, 35, 64, 0.06);
+}
+
+/* 4. Tema Alto Contraste Accesible (WCAG AAA) */
+:root[data-tema="alto-contraste"] {
+  --color-fondo: #000000;
+  --color-superficie: #000000;
+  --color-superficie-elevada: #1A1A1A;
+  --color-texto: #FFFFFF;
+  --color-texto-encabezado: #FFFFFF;
+  --color-texto-secundario: #E0E0E0;
+  --color-primario: #FFD700;
+  --color-primario-hover: #FFF000;
+  --color-acento: #00FFFF;
+  --color-borde: #FFFFFF;
+  --grosor-borde: 2px;
+
+  --estado-recomendada-bg: #000000;
+  --estado-recomendada-texto: #00FF00;
+  --estado-recomendada-borde: #00FF00;
+
+  --estado-revisar-bg: #000000;
+  --estado-revisar-texto: #FFFF00;
+  --estado-revisar-borde: #FFFF00;
+
+  --estado-rechazada-bg: #000000;
+  --estado-rechazada-texto: #FF4444;
+  --estado-rechazada-borde: #FF4444;
+
+  --fuente-titulo: sans-serif;
+  --fuente-cuerpo: sans-serif;
+  --sombre-tarjeta: none;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZoFranca CR — Selección de Rol e Ingreso</title>
+  <script type="module" crossorigin src="/assets/main-OtMdK67V.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/navbar-CAVEdXR4.js">
+  <link rel="stylesheet" crossorigin href="/assets/navbar-CHFqEPMg.css">
+</head>
+<body>
+  <div id="app-shell">
+    <main class="main-content" style="max-width: 900px; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 80vh;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--color-primario);" data-i18n="app.title">ZoFranca CR</h1>
+        <p style="font-size: 1.1rem; color: var(--color-texto-secundario);" data-i18n="app.subtitle">
+          Plataforma modular para la gestión de solicitudes de instalación y cumplimiento en zonas francas de Costa Rica
+        </p>
+      </div>
+
+      <div class="card" style="width: 100%; padding: 2.5rem;">
+        <h2 style="font-size: 1.35rem; margin-bottom: 1.5rem; text-align: center;">Selecciona un rol para ingresar al sistema</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          <!-- Rol Empresa -->
+          <div id="card-rol-empresa" class="card" style="margin: 0; cursor: pointer; border: 2px solid var(--color-borde); text-align: center; transition: all 0.2s ease;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏢</div>
+            <h3>Empresa Solicitante</h3>
+            <p style="font-size: 0.85rem; color: var(--color-texto-secundario); margin-top: 0.5rem;">
+              Crea nuevas solicitudes de instalación y consulta el historial de tus solicitudes.
+            </p>
+          </div>
+
+          <!-- Rol Analista -->
+          <div id="card-rol-analista" class="card" style="margin: 0; cursor: pointer; border: 2px solid var(--color-primario); text-align: center; background-color: var(--color-superficie-elevada); transition: all 0.2s ease;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔍</div>
+            <h3>Analista PROCOMER / ZF</h3>
+            <p style="font-size: 0.85rem; color: var(--color-texto-secundario); margin-top: 0.5rem;">
+              Revisa clasificaciones de IA, aprueba o rechaza solicitudes y gestiona trazabilidad.
+            </p>
+          </div>
+
+          <!-- Rol Administrador -->
+          <div id="card-rol-admin" class="card" style="margin: 0; cursor: pointer; border: 2px solid var(--color-borde); text-align: center; transition: all 0.2s ease;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⚙️</div>
+            <h3>Administrador</h3>
+            <p style="font-size: 0.85rem; color: var(--color-texto-secundario); margin-top: 0.5rem;">
+              Acceso completo a métricas globales, configuración de zonas francas y solicitudes.
+            </p>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <button id="btn-ingresar" class="btn btn-primary" style="padding: 0.85rem 2.5rem; font-size: 1rem;">
+            Ingresar a la Plataforma &rarr;
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

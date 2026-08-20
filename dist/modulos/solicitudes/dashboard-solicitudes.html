@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZoFranca CR — Dashboard de Solicitudes</title>
+  <script type="module" crossorigin src="/assets/dashboardSolicitudes-BAnVFnd8.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/navbar-CAVEdXR4.js">
+  <link rel="modulepreload" crossorigin href="/assets/solicitudes.service-M5hAAMlH.js">
+  <link rel="modulepreload" crossorigin href="/assets/badge-estado-BT3WXQ8M.js">
+  <link rel="modulepreload" crossorigin href="/assets/tabla-datos-Bhpj6yo6.js">
+  <link rel="stylesheet" crossorigin href="/assets/navbar-CHFqEPMg.css">
+</head>
+<body>
+  <div id="app-shell">
+    <main class="main-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title" data-i18n="dashboard.title">Dashboard de Solicitudes de Instalación</h1>
+          <p class="page-subtitle">Monitoreo, filtrado avanzado y clasificación asistida por IA para analistas y administradores</p>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button id="btn-vista-tabla" class="btn btn-secondary active">📋 Tabla</button>
+          <button id="btn-vista-grid" class="btn btn-secondary">🎴 Tarjetas</button>
+        </div>
+      </div>
+
+      <!-- Tarjetas KPI -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+        <div class="card" style="margin: 0; padding: 1.25rem;">
+          <small style="color: var(--color-texto-secundario);">Total Solicitudes</small>
+          <div id="kpi-total" style="font-size: 1.75rem; font-weight: 800; color: var(--color-primario);">0</div>
+        </div>
+        <div class="card" style="margin: 0; padding: 1.25rem; border-left: 4px solid #166534;">
+          <small style="color: var(--color-texto-secundario);">Recomendadas (IA)</small>
+          <div id="kpi-recomendadas" style="font-size: 1.75rem; font-weight: 800; color: #166534;">0</div>
+        </div>
+        <div class="card" style="margin: 0; padding: 1.25rem; border-left: 4px solid #D97706;">
+          <small style="color: var(--color-texto-secundario);">En Revisión</small>
+          <div id="kpi-revisar" style="font-size: 1.75rem; font-weight: 800; color: #D97706;">0</div>
+        </div>
+        <div class="card" style="margin: 0; padding: 1.25rem; border-left: 4px solid #DC2626;">
+          <small style="color: var(--color-texto-secundario);">Rechazadas</small>
+          <div id="kpi-rechazadas" style="font-size: 1.75rem; font-weight: 800; color: #DC2626;">0</div>
+        </div>
+      </div>
+
+      <!-- Filtros Avanzados -->
+      <div class="card" style="padding: 1.25rem; margin-bottom: 1.5rem;">
+        <div class="form-row">
+          <div class="form-group" style="margin: 0;">
+            <label class="form-label" for="filtro-busqueda" data-i18n="dashboard.search_placeholder">Búsqueda Rápida</label>
+            <input type="text" id="filtro-busqueda" class="form-control" placeholder="Buscar por empresa o ID..." data-i18n="dashboard.search_placeholder">
+          </div>
+
+          <div class="form-group" style="margin: 0;">
+            <label class="form-label" for="filtro-estado" data-i18n="dashboard.filter_status">Estado</label>
+            <select id="filtro-estado" class="form-control">
+              <option value="" data-i18n="dashboard.all_statuses">Todos los estados</option>
+              <option value="Recomendada">Recomendada</option>
+              <option value="Revisar">Revisar</option>
+              <option value="Rechazada">Rechazada</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin: 0;">
+            <label class="form-label" for="filtro-zona" data-i18n="dashboard.filter_zone">Zona Franca</label>
+            <select id="filtro-zona" class="form-control">
+              <option value="" data-i18n="dashboard.all_zones">Todas las zonas francas</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin: 0;">
+            <label class="form-label" for="filtro-sector" data-i18n="dashboard.filter_sector">Sector</label>
+            <select id="filtro-sector" class="form-control">
+              <option value="" data-i18n="dashboard.all_sectors">Todos los sectores</option>
+              <option value="Dispositivos Médicos">Dispositivos Médicos</option>
+              <option value="Tecnología">Tecnología / Software</option>
+              <option value="Servicios Compartidos">Servicios Compartidos</option>
+              <option value="Manufactura Avanzada">Manufactura Avanzada</option>
+              <option value="Agroindustria">Agroindustria</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenedor principal de datos -->
+      <div id="dashboard-contenedor-datos">
+        <!-- Renderizado dinámico -->
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
