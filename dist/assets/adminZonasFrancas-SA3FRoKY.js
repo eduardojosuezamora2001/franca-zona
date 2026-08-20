@@ -1,0 +1,13 @@
+import{r as m}from"./navbar-DLFwcji6.js";import{r as s,m as n}from"./http-DIGBQfHA.js";async function c(){return await s("/zonasFrancas")}async function d(e){const o=`zf-${Math.floor(10+Math.random()*90)}`,t={id:e.id||o,nombre:e.nombre,ubicacion:e.ubicacion,inversionMinima:Number(e.inversionMinima),empleosMinimos:Number(e.empleosMinimos),sectoresPermitidos:Array.isArray(e.sectoresPermitidos)?e.sectoresPermitidos:e.sectoresPermitidos.split(",").map(r=>r.trim())};return await s("/zonasFrancas",{method:"POST",body:JSON.stringify(t)})}document.addEventListener("DOMContentLoaded",async()=>{m("#app-shell"),await i();const e=document.getElementById("form-nueva-zf");e.addEventListener("submit",async o=>{o.preventDefault();const t={nombre:document.getElementById("zf-nombre").value.trim(),ubicacion:document.getElementById("zf-ubicacion").value.trim(),inversionMinima:document.getElementById("zf-inversion").value,empleosMinimos:document.getElementById("zf-empleos").value,sectoresPermitidos:document.getElementById("zf-sectores").value};try{const r=await d(t);n(`¡Zona Franca "${r.nombre}" registrada con éxito!`,"success"),e.reset(),await i()}catch(r){n(`Error registrando Zona Franca: ${r.message}`,"error")}})});async function i(){const e=document.getElementById("contenedor-lista-zf");try{const o=await c();if(!o||o.length===0){e.innerHTML='<p style="color: var(--color-texto-secundario);">No hay zonas francas registradas.</p>';return}const t=o.map(r=>{const a=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(r.inversionMinima);return`
+        <div style="background-color: var(--color-superficie-elevada); border: var(--grosor-borde) solid var(--color-borde); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <h4 style="font-size: 1.05rem;">${r.nombre}</h4>
+            <span class="badge-estado badge-estado--recomendada">${r.ubicacion}</span>
+          </div>
+          <div style="font-size: 0.875rem; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+            <div>💰 <strong>Inversión Mínima:</strong> ${a}</div>
+            <div>👥 <strong>Empleos Mínimos:</strong> ${r.empleosMinimos} puestos</div>
+            <div>🏭 <strong>Sectores Permitidos:</strong> ${r.sectoresPermitidos?r.sectoresPermitidos.join(", "):"Todos"}</div>
+          </div>
+        </div>
+      `}).join("");e.innerHTML=t}catch(o){e.innerHTML=`<p style="color: var(--estado-rechazada-texto);">Error cargando lista: ${o.message}</p>`}}

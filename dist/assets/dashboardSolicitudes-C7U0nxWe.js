@@ -1,9 +1,9 @@
-import{t as p,r as v}from"./navbar-CAVEdXR4.js";import{o as g,a as l,m as u}from"./solicitudes.service-M5hAAMlH.js";import{r as c}from"./tabla-datos-Bhpj6yo6.js";import{r as f}from"./badge-estado-BT3WXQ8M.js";function y(e){const t=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(e.inversionProyectada),a=new Date(e.fechaEnvio).toLocaleDateString("es-CR",{year:"numeric",month:"short",day:"numeric"});return`
+import{t as p,r as v}from"./navbar-DLFwcji6.js";import{a as g,o as l}from"./solicitudes.service-ConByWzl.js";import{r as c}from"./tabla-datos-DqBSN_xn.js";import{r as u}from"./badge-estado-DbW5lVZz.js";import{m as f}from"./http-DIGBQfHA.js";function y(e){const t=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(e.inversionProyectada),a=new Date(e.fechaEnvio).toLocaleDateString("es-CR",{year:"numeric",month:"short",day:"numeric"});return`
     <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
       <div>
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
           <span style="font-weight: 700; font-size: 0.85rem; color: var(--color-texto-secundario);">${e.id}</span>
-          ${f(e.estado)}
+          ${u(e.estado)}
         </div>
         <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">${e.nombreEmpresa}</h3>
         <p style="font-size: 0.85rem; color: var(--color-texto-secundario); margin-bottom: 1rem;">
@@ -41,7 +41,7 @@ import{t as p,r as v}from"./navbar-CAVEdXR4.js";import{o as g,a as l,m as u}from
       <div class="card" style="text-align: center; color: var(--estado-rechazada-texto); border-color: var(--estado-rechazada-borde);">
         ⚠️ Error de conexión al cargar solicitudes: ${t.message}
       </div>
-    `,u("Error al conectar con la API de solicitudes","error")}}async function m(){const e=document.getElementById("filtro-busqueda").value.trim(),t=document.getElementById("filtro-estado").value,a=document.getElementById("filtro-zona").value,n=document.getElementById("filtro-sector").value,o=await l({busqueda:e,estado:t,zonaFrancaId:a,sector:n});i(o)}function h(e){const t=e.length,a=e.filter(r=>r.estado==="Recomendada").length,n=e.filter(r=>r.estado==="Revisar"||r.estado==="Pendiente").length,o=e.filter(r=>r.estado==="Rechazada").length;document.getElementById("kpi-total").textContent=t,document.getElementById("kpi-recomendadas").textContent=`${a} (${t?Math.round(a/t*100):0}%)`,document.getElementById("kpi-revisar").textContent=`${n} (${t?Math.round(n/t*100):0}%)`,document.getElementById("kpi-rechazadas").textContent=`${o} (${t?Math.round(o/t*100):0}%)`}function i(e){const t=document.getElementById("dashboard-contenedor-datos");if(s==="tabla")t.innerHTML=c(e);else{if(!e||e.length===0){t.innerHTML=c([]);return}const a=e.map(n=>y(n)).join("");t.innerHTML=`
+    `,f("Error al conectar con la API de solicitudes","error")}}async function m(){const e=document.getElementById("filtro-busqueda").value.trim(),t=document.getElementById("filtro-estado").value,a=document.getElementById("filtro-zona").value,n=document.getElementById("filtro-sector").value,o=await l({busqueda:e,estado:t,zonaFrancaId:a,sector:n});i(o)}function h(e){const t=e.length,a=e.filter(r=>r.estado==="Recomendada").length,n=e.filter(r=>r.estado==="Revisar"||r.estado==="Pendiente").length,o=e.filter(r=>r.estado==="Rechazada").length;document.getElementById("kpi-total").textContent=t,document.getElementById("kpi-recomendadas").textContent=`${a} (${t?Math.round(a/t*100):0}%)`,document.getElementById("kpi-revisar").textContent=`${n} (${t?Math.round(n/t*100):0}%)`,document.getElementById("kpi-rechazadas").textContent=`${o} (${t?Math.round(o/t*100):0}%)`}function i(e){const t=document.getElementById("dashboard-contenedor-datos");if(s==="tabla")t.innerHTML=c(e);else{if(!e||e.length===0){t.innerHTML=c([]);return}const a=e.map(n=>y(n)).join("");t.innerHTML=`
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
         ${a}
       </div>

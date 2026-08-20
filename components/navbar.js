@@ -9,15 +9,18 @@ import { t, aplicarTraducciones } from '../shared/i18n.js';
 const MENU_POR_ROL = {
   empresa: [
     { textoClave: 'nav.new_request', texto: 'Nueva solicitud', href: '/modulos/solicitudes/solicitud-nueva.html' },
-    { textoClave: 'nav.my_requests', texto: 'Mis solicitudes', href: '/modulos/solicitudes/solicitud-historial.html' }
+    { textoClave: 'nav.my_requests', texto: 'Mis solicitudes', href: '/modulos/solicitudes/solicitud-historial.html' },
+    { textoClave: 'nav.compliance', texto: 'Reportar Cumplimiento', href: '/modulos/cumplimiento/reporte-cumplimiento.html' }
   ],
   analista: [
     { textoClave: 'nav.dashboard', texto: 'Dashboard solicitudes', href: '/modulos/solicitudes/dashboard-solicitudes.html' },
-    { textoClave: 'nav.detail', texto: 'Detalle / Clasificación', href: '/modulos/solicitudes/solicitud-detalle.html?id=SOL-2026-001' }
+    { textoClave: 'nav.detail', texto: 'Detalle / Clasificación', href: '/modulos/solicitudes/solicitud-detalle.html?id=SOL-2026-001' },
+    { textoClave: 'nav.alerts', texto: 'Alertas y PROCOMER', href: '/modulos/cumplimiento/panel-alertas.html' }
   ],
   administrador: [
     { textoClave: 'nav.dashboard', texto: 'Dashboard solicitudes', href: '/modulos/solicitudes/dashboard-solicitudes.html' },
-    { textoClave: 'nav.detail', texto: 'Detalle / Clasificación', href: '/modulos/solicitudes/solicitud-detalle.html?id=SOL-2026-001' }
+    { textoClave: 'nav.admin_zones', texto: 'Zonas Francas (RF-01)', href: '/modulos/admin/admin-zonas-francas.html' },
+    { textoClave: 'nav.alerts', texto: 'Alertas y PROCOMER', href: '/modulos/cumplimiento/panel-alertas.html' }
   ]
 };
 
@@ -73,9 +76,10 @@ export function renderNavbar(contenedorId = '#app-shell') {
     if (rolSelect) {
       rolSelect.addEventListener('change', (e) => {
         cambiarRol(e.target.value);
-        // Redirigir al inicio o dashboard del nuevo rol
         if (e.target.value === 'empresa') {
           window.location.href = '/modulos/solicitudes/solicitud-nueva.html';
+        } else if (e.target.value === 'administrador') {
+          window.location.href = '/modulos/admin/admin-zonas-francas.html';
         } else {
           window.location.href = '/modulos/solicitudes/dashboard-solicitudes.html';
         }

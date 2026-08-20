@@ -1,4 +1,4 @@
-import{r as d}from"./badge-estado-BT3WXQ8M.js";import{t}from"./navbar-CAVEdXR4.js";function s(e,m){if(!e||e.length===0)return`
+import{r as d}from"./badge-estado-DbW5lVZz.js";import{t}from"./navbar-DLFwcji6.js";function s(e,m){if(!e||e.length===0)return`
       <div class="card" style="text-align: center; padding: 3rem 1.5rem;">
         <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
         <h3 data-i18n="dashboard.empty_title">${t("dashboard.empty_title","No se encontraron solicitudes")}</h3>

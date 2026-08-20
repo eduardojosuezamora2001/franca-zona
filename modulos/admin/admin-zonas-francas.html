@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZoFranca CR — Gestión de Zonas Francas</title>
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/temas.css">
+  <link rel="stylesheet" href="/styles/componentes.css">
+</head>
+<body>
+  <div id="app-shell">
+    <main class="main-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title" data-i18n="nav.admin_zones">Gestión de Zonas Francas y Criterios de Admisión (RF-01)</h1>
+          <p class="page-subtitle">Configure las zonas francas registradas y sus parámetros mínimos (inversión, empleos y sectores)</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+        <!-- Formulario de Registro / Alta RF-01 -->
+        <div class="card">
+          <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">➕ Registrar Nueva Zona Franca</h3>
+          <form id="form-nueva-zf">
+            <div class="form-group">
+              <label class="form-label" for="zf-nombre">Nombre de la Zona Franca *</label>
+              <input type="text" id="zf-nombre" class="form-control" placeholder="Ej. Coyol Free Zone Extension" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="zf-ubicacion">Ubicación / Provincia *</label>
+              <input type="text" id="zf-ubicacion" class="form-control" placeholder="Ej. Alajuela / Heredia / Cartago" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="zf-inversion">Inversión Mínima Requerida (USD) *</label>
+              <input type="number" id="zf-inversion" class="form-control" placeholder="Ej. 1500000" min="100000" step="50000" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="zf-empleos">Empleos Mínimos Proyectados *</label>
+              <input type="number" id="zf-empleos" class="form-control" placeholder="Ej. 45" min="5" step="1" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="zf-sectores">Sectores Permitidos (Separados por coma) *</label>
+              <input type="text" id="zf-sectores" class="form-control" placeholder="Ej. Dispositivos Médicos, Tecnología, Software" required>
+            </div>
+
+            <button type="submit" id="btn-guardar-zf" class="btn btn-primary" style="width: 100%;">
+              💾 Guardar Zona Franca
+            </button>
+          </form>
+        </div>
+
+        <!-- Lista de Zonas Francas Existentes -->
+        <div class="card">
+          <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">🏢 Zonas Francas Registradas</h3>
+          <div id="contenedor-lista-zf">
+            <!-- Renderizado dinámico -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/modulos/admin/admin-zonas-francas.js"></script>
+</body>
+</html>

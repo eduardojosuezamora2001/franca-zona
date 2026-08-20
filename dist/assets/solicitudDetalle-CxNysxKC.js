@@ -1,4 +1,4 @@
-import{r as x,o as $}from"./navbar-CAVEdXR4.js";import{b as I,o as z,c as b,m as l}from"./solicitudes.service-M5hAAMlH.js";import{r as E}from"./badge-estado-BT3WXQ8M.js";function y({titulo:e,contenidoHtml:a,textoConfirmar:t="Confirmar",textoCancelar:i="Cancelar",onConfirmar:n}){const c=document.getElementById("modal-dinamico");c&&c.remove();const r=document.createElement("div");r.id="modal-dinamico",r.className="modal-backdrop",r.innerHTML=`
+import{r as x,o as $}from"./navbar-DLFwcji6.js";import{b as I,a as z,c as b}from"./solicitudes.service-ConByWzl.js";import{r as E}from"./badge-estado-DbW5lVZz.js";import{m as l}from"./http-DIGBQfHA.js";function y({titulo:e,contenidoHtml:a,textoConfirmar:t="Confirmar",textoCancelar:i="Cancelar",onConfirmar:n}){const c=document.getElementById("modal-dinamico");c&&c.remove();const r=document.createElement("div");r.id="modal-dinamico",r.className="modal-backdrop",r.innerHTML=`
     <div class="modal-content">
       <div class="modal-header">
         <h3>${e}</h3>
