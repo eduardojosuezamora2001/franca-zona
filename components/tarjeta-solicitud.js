@@ -17,22 +17,22 @@ export function renderTarjetaSolicitud(solicitud) {
         </div>
         <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">${solicitud.nombreEmpresa}</h3>
         <p style="font-size: 0.85rem; color: var(--color-texto-secundario); margin-bottom: 1rem;">
-          📍 ${solicitud.nombreZonaFranca} &bull; 🏭 ${solicitud.sector}
+          <i class="fa-solid fa-location-dot"></i> ${solicitud.nombreZonaFranca} &bull; <i class="fa-solid fa-industry"></i> ${solicitud.sector}
         </p>
         
         <div style="background-color: var(--color-superficie-elevada); padding: 0.75rem; border-radius: 8px; font-size: 0.875rem; margin-bottom: 1rem;">
           <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-            <span>💵 Inversión:</span>
+            <span><i class="fa-solid fa-dollar-sign"></i> Inversión:</span>
             <strong>${inversionFormatted}</strong>
           </div>
           <div style="display: flex; justify-content: space-between;">
-            <span>👥 Empleos:</span>
+            <span><i class="fa-solid fa-users"></i> Empleos:</span>
             <strong>${solicitud.empleosProyectados} directos</strong>
           </div>
         </div>
 
         <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; margin-bottom: 1rem;">
-          <span>🤖 Afinidad IA:</span>
+          <span><i class="fa-solid fa-robot"></i> Afinidad IA:</span>
           <div style="flex:1; height: 8px; background: var(--color-superficie-elevada); border-radius: 4px; overflow:hidden;">
             <div style="width: ${solicitud.puntajeIA}%; height: 100%; background: ${solicitud.puntajeIA >= 80 ? '#166534' : solicitud.puntajeIA >= 50 ? '#D97706' : '#DC2626'};"></div>
           </div>

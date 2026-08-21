@@ -20,10 +20,10 @@ export function renderSelectorTema() {
 
   const html = `
     <select id="selector-tema-select" class="navbar-select" title="Seleccionar Tema">
-      <option value="claro" ${temaActual === 'claro' ? 'selected' : ''}>☀️ ${t('theme.light', 'Claro')}</option>
-      <option value="oscuro" ${temaActual === 'oscuro' ? 'selected' : ''}>🌙 ${t('theme.dark', 'Oscuro')}</option>
-      <option value="institucional" ${temaActual === 'institucional' ? 'selected' : ''}>🏛️ ${t('theme.institutional', 'Institucional')}</option>
-      <option value="alto-contraste" ${temaActual === 'alto-contraste' ? 'selected' : ''}>👁️ ${t('theme.high_contrast', 'Alto Contraste')}</option>
+      <option value="claro" ${temaActual === 'claro' ? 'selected' : ''}>${t('theme.light', 'Claro')}</option>
+      <option value="oscuro" ${temaActual === 'oscuro' ? 'selected' : ''}>${t('theme.dark', 'Oscuro')}</option>
+      <option value="institucional" ${temaActual === 'institucional' ? 'selected' : ''}>${t('theme.institutional', 'Institucional')}</option>
+      <option value="alto-contraste" ${temaActual === 'alto-contraste' ? 'selected' : ''}>${t('theme.high_contrast', 'Alto Contraste')}</option>
     </select>
   `;
 

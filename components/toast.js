@@ -13,9 +13,9 @@ export function mostrarToast(mensaje, tipo = 'info', duracion = 4000) {
   const toast = document.createElement('div');
   toast.className = `toast toast--${tipo}`;
   
-  let icon = 'ℹ️';
-  if (tipo === 'success') icon = '✅';
-  if (tipo === 'error') icon = '⚠️';
+  let icon = '<i class="fa-solid fa-circle-info"></i>';
+  if (tipo === 'success') icon = '<i class="fa-solid fa-circle-check"></i>';
+  if (tipo === 'error') icon = '<i class="fa-solid fa-triangle-exclamation"></i>';
 
   toast.innerHTML = `<span>${icon}</span> <span>${mensaje}</span>`;
   container.appendChild(toast);

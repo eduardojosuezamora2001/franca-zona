@@ -8,9 +8,9 @@ export function renderSelectorIdioma() {
 
   const html = `
     <select id="selector-idioma-select" class="navbar-select" title="Seleccionar Idioma">
-      <option value="es" ${idiomaActual === 'es' ? 'selected' : ''}>🇨🇷 ES</option>
-      <option value="en" ${idiomaActual === 'en' ? 'selected' : ''}>🇺🇸 EN</option>
-      <option value="fr" ${idiomaActual === 'fr' ? 'selected' : ''}>🇫🇷 FR</option>
+      <option value="es" ${idiomaActual === 'es' ? 'selected' : ''}>ES</option>
+      <option value="en" ${idiomaActual === 'en' ? 'selected' : ''}>EN</option>
+      <option value="fr" ${idiomaActual === 'fr' ? 'selected' : ''}>FR</option>
     </select>
   `;
 

@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   await cargarTablaReportes();
 
   document.getElementById('btn-exportar-procomer').addEventListener('click', () => {
-    mostrarToast('📄 Generando informe oficial consolidado de cumplimiento para PROCOMER...', 'info');
+    mostrarToast('Generando informe oficial consolidado de cumplimiento para PROCOMER...', 'info');
     setTimeout(() => {
-      mostrarToast('✅ Informe exportado exitosamente en formato oficial PROCOMER (Simulación PDF/XLS).', 'success');
+      mostrarToast('Informe exportado exitosamente en formato oficial PROCOMER (Simulación PDF/XLS).', 'success');
     }, 1500);
   });
 });
@@ -48,7 +48,7 @@ async function cargarAlertas() {
     if (!alertas || alertas.length === 0) {
       contenedor.innerHTML = `
         <div style="background-color: var(--estado-recomendada-bg); border: 1px solid var(--estado-recomendada-borde); padding: 1.5rem; border-radius: 8px; text-align: center; color: var(--estado-recomendada-texto);">
-          🎉 <strong>Excelente:</strong> No se registran alertas activas de incumplimiento. Todas las empresas cumplen con más del 85% de sus compromisos.
+          <i class="fa-solid fa-circle-check"></i> <strong>Excelente:</strong> No se registran alertas activas de incumplimiento. Todas las empresas cumplen con más del 85% de sus compromisos.
         </div>
       `;
       return;
@@ -63,7 +63,7 @@ async function cargarAlertas() {
         <div style="background-color: var(--estado-rechazada-bg); border: 1px solid var(--estado-rechazada-borde); border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem; color: var(--estado-rechazada-texto);">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
             <div>
-              <strong style="font-size: 1.1rem;">⚠️ ${a.nombreEmpresa}</strong> (${a.nombreZonaFranca})
+              <strong style="font-size: 1.1rem;"><i class="fa-solid fa-triangle-exclamation"></i> ${a.nombreEmpresa}</strong> (${a.nombreZonaFranca})
             </div>
             <span class="badge-estado badge-estado--rechazada">Gravedad: ${a.gravedad}</span>
           </div>
@@ -73,8 +73,8 @@ async function cargarAlertas() {
           </p>
 
           <div style="display: flex; gap: 2rem; flex-wrap: wrap; background-color: rgba(255,255,255,0.4); padding: 0.75rem; border-radius: 6px; font-size: 0.875rem;">
-            <div>👥 <strong>Empleos Reales:</strong> ${a.empleosReales} de ${a.empleosComprometidos} (<span style="font-weight: 700; text-decoration: underline;">${empPct}%</span>)</div>
-            <div>💰 <strong>Inversión Ejecutada:</strong> ${invEjec} de ${invComp}</div>
+            <div><i class="fa-solid fa-users"></i> <strong>Empleos Reales:</strong> ${a.empleosReales} de ${a.empleosComprometidos} (<span style="font-weight: 700; text-decoration: underline;">${empPct}%</span>)</div>
+            <div><i class="fa-solid fa-sack-dollar"></i> <strong>Inversión Ejecutada:</strong> ${invEjec} de ${invComp}</div>
           </div>
         </div>
       `;

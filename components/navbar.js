@@ -4,6 +4,7 @@
 import { obtenerSesion, cambiarRol } from '../shared/auth.js';
 import { renderSelectorTema } from './selector-tema.js';
 import { renderSelectorIdioma } from './selector-idioma.js';
+import { renderChatbot } from './chatbot.js';
 import { t, aplicarTraducciones } from '../shared/i18n.js';
 
 const MENU_POR_ROL = {
@@ -37,7 +38,7 @@ export function renderNavbar(contenedorId = '#app-shell') {
     <nav class="navbar" data-rol="${rolActual}">
       <div class="navbar__brand">
         <a href="/index.html" class="navbar__logo">
-          🌐 ZoFranca CR
+          <i class="fa-solid fa-globe"></i> ZoFranca CR
         </a>
         <span class="navbar__badge-rol">${rolActual}</span>
       </div>
@@ -52,9 +53,9 @@ export function renderNavbar(contenedorId = '#app-shell') {
       <div class="navbar__acciones">
         <div class="selector-rol-wrapper" title="Simular cambio de rol">
           <select id="selector-rol-select" class="navbar-select">
-            <option value="empresa" ${rolActual === 'empresa' ? 'selected' : ''}>🏢 Empresa</option>
-            <option value="analista" ${rolActual === 'analista' ? 'selected' : ''}>🔍 Analista</option>
-            <option value="administrador" ${rolActual === 'administrador' ? 'selected' : ''}>⚙️ Admin</option>
+            <option value="empresa" ${rolActual === 'empresa' ? 'selected' : ''}>Empresa</option>
+            <option value="analista" ${rolActual === 'analista' ? 'selected' : ''}>Analista</option>
+            <option value="administrador" ${rolActual === 'administrador' ? 'selected' : ''}>Admin</option>
           </select>
         </div>
         ${selectorTemaHtml}
@@ -96,5 +97,8 @@ export function renderNavbar(contenedorId = '#app-shell') {
 
     // Aplicar i18n
     aplicarTraducciones();
+
+    // Renderizar Asistente Virtual (Chatbot Flotante)
+    renderChatbot();
   }, 0);
 }

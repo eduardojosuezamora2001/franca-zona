@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const btn = document.getElementById('btn-enviar-reporte');
     btn.disabled = true;
-    btn.textContent = '⏳ Verificando y procesando...';
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Verificando y procesando...';
 
     const datos = {
       solicitudId: document.getElementById('rep-solicitud').value,
@@ -65,9 +65,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
       const reporte = await enviarReporteCumplimiento(datos);
       if (reporte.alertaGenerada) {
-        mostrarToast(`⚠️ Reporte registrado. Atención: Se generó una ALERTA de incumplimiento (${reporte.cumplimientoEmpleosPct}% empleos).`, 'error', 6000);
+        mostrarToast(`Reporte registrado. Atención: Se generó una ALERTA de incumplimiento (${reporte.cumplimientoEmpleosPct}% empleos).`, 'error', 6000);
       } else {
-        mostrarToast(`✅ Reporte de cumplimiento registrado exitosamente (Estado: En Regla).`, 'success');
+        mostrarToast(`Reporte de cumplimiento registrado exitosamente (Estado: En Regla).`, 'success');
       }
 
       setTimeout(() => {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (err) {
       mostrarToast(`Error enviando reporte: ${err.message}`, 'error');
       btn.disabled = false;
-      btn.textContent = '📤 Enviar Reporte de Cumplimiento';
+      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar Reporte de Cumplimiento';
     }
   });
 });
@@ -113,10 +113,10 @@ function calcularPrevisualizacion() {
   prevEmp.textContent = `${empPct}%`;
 
   if (invPct < 85 || empPct < 85) {
-    prevAlerta.textContent = '⚠️ Se generará una ALERTA por déficit de compromiso (<85%)';
+    prevAlerta.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Se generará una ALERTA por déficit de compromiso (<85%)';
     prevAlerta.style.color = '#DC2626';
   } else {
-    prevAlerta.textContent = '✅ Cumplimiento óptimo frente al compromiso original';
+    prevAlerta.innerHTML = '<i class="fa-solid fa-circle-check"></i> Cumplimiento óptimo frente al compromiso original';
     prevAlerta.style.color = '#166534';
   }
 
