@@ -4,6 +4,7 @@
 import { obtenerSesion, cambiarRol } from '../shared/auth.js';
 import { renderSelectorTema } from './selector-tema.js';
 import { renderSelectorIdioma } from './selector-idioma.js';
+import { renderChatbot } from './chatbot.js';
 import { t, aplicarTraducciones } from '../shared/i18n.js';
 
 const MENU_POR_ROL = {
@@ -96,5 +97,8 @@ export function renderNavbar(contenedorId = '#app-shell') {
 
     // Aplicar i18n
     aplicarTraducciones();
+
+    // Renderizar Asistente Virtual (Chatbot Flotante)
+    renderChatbot();
   }, 0);
 }
