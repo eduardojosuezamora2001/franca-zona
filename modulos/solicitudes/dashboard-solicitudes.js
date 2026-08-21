@@ -66,7 +66,7 @@ async function cargarDatos() {
   } catch (err) {
     contenedor.innerHTML = `
       <div class="card" style="text-align: center; color: var(--estado-rechazada-texto); border-color: var(--estado-rechazada-borde);">
-        ⚠️ Error de conexión al cargar solicitudes: ${err.message}
+        <i class="fa-solid fa-triangle-exclamation"></i> Error de conexión al cargar solicitudes: ${err.message}
       </div>
     `;
     mostrarToast('Error al conectar con la API de solicitudes', 'error');

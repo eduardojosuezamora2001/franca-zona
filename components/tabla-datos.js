@@ -8,7 +8,7 @@ export function renderTablaSolicitudes(solicitudes, onAccionClick) {
   if (!solicitudes || solicitudes.length === 0) {
     return `
       <div class="card" style="text-align: center; padding: 3rem 1.5rem;">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+        <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--color-texto-secundario);"><i class="fa-solid fa-magnifying-glass"></i></div>
         <h3 data-i18n="dashboard.empty_title">${t('dashboard.empty_title', 'No se encontraron solicitudes')}</h3>
         <p style="color: var(--color-texto-secundario);" data-i18n="dashboard.empty_desc">${t('dashboard.empty_desc', 'Prueba ajustando los filtros de búsqueda o registra una nueva solicitud.')}</p>
       </div>

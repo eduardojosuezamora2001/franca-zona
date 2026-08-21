@@ -119,7 +119,7 @@ function inicializarMapaInteractivo() {
     }).addTo(mapaInteractivo);
 
     marcadorInteractivo = L.marker([coords.lat, coords.lng], { draggable: true }).addTo(mapaInteractivo);
-    marcadorInteractivo.bindPopup(`<b>📍 ${canton}, ${provincia}</b><br>Haga clic o arrastre para mover el punto.`).openPopup();
+    marcadorInteractivo.bindPopup(`<b><i class="fa-solid fa-location-dot"></i> ${canton}, ${provincia}</b><br>Haga clic o arrastre para mover el punto.`).openPopup();
 
     // Evento Clic en el mapa para seleccionar punto
     mapaInteractivo.on('click', (e) => {
@@ -157,7 +157,7 @@ function actualizarUbicacionPorGeo() {
     mapaInteractivo.setView([coords.lat, coords.lng], 13, { animate: true });
     if (marcadorInteractivo) {
       marcadorInteractivo.setLatLng([coords.lat, coords.lng]);
-      marcadorInteractivo.bindPopup(`<b>📍 Cantón: ${canton}, ${provincia}</b>`).openPopup();
+      marcadorInteractivo.bindPopup(`<b><i class="fa-solid fa-location-dot"></i> Cantón: ${canton}, ${provincia}</b>`).openPopup();
     }
   }
 
@@ -171,7 +171,7 @@ function actualizarMarcadorDesdeInputs() {
   if (mapaInteractivo && marcadorInteractivo && !isNaN(lat) && !isNaN(lng)) {
     mapaInteractivo.setView([lat, lng], 13);
     marcadorInteractivo.setLatLng([lat, lng]);
-    document.getElementById('badge-punto-mapa').textContent = `🎯 Lat: ${lat}, Lng: ${lng}`;
+    document.getElementById('badge-punto-mapa').innerHTML = `<i class="fa-solid fa-crosshairs"></i> Lat: ${lat}, Lng: ${lng}`;
   }
 }
 
@@ -180,7 +180,7 @@ function actualizarInputsCoordenadas(lat, lng) {
   document.getElementById('zf-lng').value = lng;
   const badge = document.getElementById('badge-punto-mapa');
   if (badge) {
-    badge.textContent = `🎯 Lat: ${lat}, Lng: ${lng}`;
+    badge.innerHTML = `<i class="fa-solid fa-crosshairs"></i> Lat: ${lat}, Lng: ${lng}`;
   }
 }
 
@@ -204,22 +204,22 @@ async function cargarZonasFrancas() {
         <div class="card" style="margin-bottom: 1.25rem; border: var(--grosor-borde) solid var(--color-borde); transition: transform 0.2s ease;">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
             <h4 style="font-size: 1.15rem; color: var(--color-primario); margin:0;">${z.nombre}</h4>
-            <span class="badge-estado badge-estado--recomendada">📍 ${ubicacionFormateada}</span>
+            <span class="badge-estado badge-estado--recomendada"><i class="fa-solid fa-location-dot"></i> ${ubicacionFormateada}</span>
           </div>
 
           <div style="font-size: 0.875rem; display: flex; flex-direction: column; gap: 0.35rem; margin-top: 0.75rem; margin-bottom: 1rem;">
-            <div>🗺️ <strong>Dirección:</strong> ${z.direccion || ubicacionFormateada}</div>
-            <div>💰 <strong>Inversión Mínima:</strong> ${invFormatted}</div>
-            <div>👥 <strong>Empleos Mínimos:</strong> ${z.empleosMinimos} puestos directos</div>
-            <div>🏭 <strong>Sectores:</strong> ${z.sectoresPermitidos ? (Array.isArray(z.sectoresPermitidos) ? z.sectoresPermitidos.join(', ') : z.sectoresPermitidos) : 'Todos'}</div>
+            <div><i class="fa-solid fa-map-location-dot"></i> <strong>Dirección:</strong> ${z.direccion || ubicacionFormateada}</div>
+            <div><i class="fa-solid fa-sack-dollar"></i> <strong>Inversión Mínima:</strong> ${invFormatted}</div>
+            <div><i class="fa-solid fa-users"></i> <strong>Empleos Mínimos:</strong> ${z.empleosMinimos} puestos directos</div>
+            <div><i class="fa-solid fa-industry"></i> <strong>Sectores:</strong> ${z.sectoresPermitidos ? (Array.isArray(z.sectoresPermitidos) ? z.sectoresPermitidos.join(', ') : z.sectoresPermitidos) : 'Todos'}</div>
             <div style="margin-top: 0.25rem;">
-              <span class="coord-badge">🌐 Lat: ${z.lat || '9.9922'} &bull; Lng: ${z.lng || '-84.2818'}</span>
+              <span class="coord-badge"><i class="fa-solid fa-globe"></i> Lat: ${z.lat || '9.9922'} &bull; Lng: ${z.lng || '-84.2818'}</span>
             </div>
           </div>
 
           <div style="display: flex; justify-content: flex-end; border-top: var(--grosor-borde) solid var(--color-borde); padding-top: 0.75rem;">
             <a href="/modulos/admin/admin-zona-detalle.html?id=${z.id}" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.4rem 0.85rem;">
-              🔍 Ver Detalle Completo & Mapa &rarr;
+              <i class="fa-solid fa-magnifying-glass"></i> Ver Detalle Completo & Mapa <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>

@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const btnEnviar = document.getElementById('btn-enviar');
     btnEnviar.disabled = true;
-    btnEnviar.textContent = '⏳ Evaluando con IA y registrando...';
+    btnEnviar.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Evaluando con IA y registrando...';
 
     const datos = {
       nombreEmpresa: document.getElementById('nombreEmpresa').value.trim(),
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (err) {
       mostrarToast(`Error al procesar la solicitud: ${err.message}`, 'error');
       btnEnviar.disabled = false;
-      btnEnviar.textContent = '🚀 Enviar Solicitud y Evaluar con IA';
+      btnEnviar.innerHTML = '<i class="fa-solid fa-rocket"></i> Enviar Solicitud y Evaluar con IA';
     }
   });
 });

@@ -65,7 +65,7 @@
         <!-- Formulario de Registro con Selección de Provincia/Cantón y Punto Interactivo en Mapa -->
         <div class="card">
           <h3 style="font-size: 1.2rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-            🗺️ Registrar Nueva Zona Franca
+            <i class="fa-solid fa-map-location-dot"></i> Registrar Nueva Zona Franca
           </h3>
           <form id="form-nueva-zf">
             <div class="form-group">
@@ -98,14 +98,14 @@
             <!-- Selección de Punto Clic en el Mapa -->
             <div class="form-group">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
-                <label class="form-label" style="margin:0;">📍 Selección de Punto Geográfico (Haga clic en el mapa)</label>
-                <span class="coord-badge" id="badge-punto-mapa">🎯 Haga clic en el mapa</span>
+                <label class="form-label" style="margin:0;"><i class="fa-solid fa-location-dot"></i> Selección de Punto Geográfico (Haga clic en el mapa)</label>
+                <span class="coord-badge" id="badge-punto-mapa"><i class="fa-solid fa-crosshairs"></i> Haga clic en el mapa</span>
               </div>
               <div id="mapa-formulario-container" class="map-container">
                 <!-- Se actualiza dinámicamente -->
               </div>
               <div class="map-instruction">
-                <span>👉 <strong>Haga clic en cualquier punto del mapa</strong> o arrastre el marcador para fijar las coordenadas exactas.</span>
+                <span><i class="fa-solid fa-hand-pointer"></i> <strong>Haga clic en cualquier punto del mapa</strong> o arrastre el marcador para fijar las coordenadas exactas.</span>
               </div>
             </div>
 
@@ -139,14 +139,14 @@
             </div>
 
             <button type="submit" id="btn-guardar-zf" class="btn btn-primary" style="width: 100%;">
-              💾 Guardar Zona Franca con Ubicación Selección
+              <i class="fa-solid fa-floppy-disk"></i> Guardar Zona Franca con Ubicación Selección
             </button>
           </form>
         </div>
 
         <!-- Lista de Zonas Francas Registradas (Sin mapa en la tarjeta) -->
         <div class="card">
-          <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">🏢 Zonas Francas Registradas</h3>
+          <h3 style="font-size: 1.2rem; margin-bottom: 1rem;"><i class="fa-solid fa-building"></i> Zonas Francas Registradas</h3>
           <div id="contenedor-lista-zf">
             <!-- Renderizado dinámico -->
           </div>

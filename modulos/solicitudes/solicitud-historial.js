@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   } catch (err) {
     contenedor.innerHTML = `
       <div class="card" style="text-align: center; color: var(--estado-rechazada-texto); border-color: var(--estado-rechazada-borde);">
-        ⚠️ Error al cargar el historial de solicitudes: ${err.message}
+        <i class="fa-solid fa-triangle-exclamation"></i> Error al cargar el historial de solicitudes: ${err.message}
       </div>
     `;
   }

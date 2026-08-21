@@ -39,7 +39,7 @@ async function cargarDetalle(id) {
   } catch (err) {
     contenedor.innerHTML = `
       <div class="card" style="text-align: center; color: var(--estado-rechazada-texto); border-color: var(--estado-rechazada-borde);">
-        ⚠️ No se encontró la solicitud solicitada (ID: ${id}): ${err.message}
+        <i class="fa-solid fa-triangle-exclamation"></i> No se encontró la solicitud solicitada (ID: ${id}): ${err.message}
       </div>
     `;
   }
@@ -77,7 +77,7 @@ function renderizarVista(solicitud, zona) {
       <div class="ai-score-header">
         <div>
           <h3 style="font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem;" data-i18n="detail.ai_score">
-            🤖 Puntaje de Afinidad Algorítmica con IA
+            <i class="fa-solid fa-robot"></i> Puntaje de Afinidad Algorítmica con IA
           </h3>
           <p style="font-size: 0.875rem; color: var(--color-texto-secundario);">Evaluación automatizada frente a parámetros de la Zona Franca "${solicitud.nombreZonaFranca}"</p>
         </div>
@@ -89,14 +89,14 @@ function renderizarVista(solicitud, zona) {
       </div>
 
       <div style="background-color: var(--color-superficie-elevada); border-left: 4px solid var(--color-acento); padding: 1rem; border-radius: 8px;">
-        <h4 style="font-size: 0.9rem; margin-bottom: 0.35rem;" data-i18n="detail.ai_justification">💬 Justificación Algorítmica de la IA:</h4>
+        <h4 style="font-size: 0.9rem; margin-bottom: 0.35rem;" data-i18n="detail.ai_justification"><i class="fa-solid fa-comment-dots"></i> Justificación Algorítmica de la IA:</h4>
         <p style="font-size: 0.925rem;">${solicitud.justificacionIA}</p>
       </div>
     </div>
 
     <!-- Requisitos Comparativos de la Zona Franca -->
     <div class="card">
-      <h3 style="font-size: 1.15rem; margin-bottom: 1rem;" data-i18n="detail.requirements">📊 Comparativa de Requisitos Reales vs. Exigidos</h3>
+      <h3 style="font-size: 1.15rem; margin-bottom: 1rem;" data-i18n="detail.requirements"><i class="fa-solid fa-chart-simple"></i> Comparativa de Requisitos Reales vs. Exigidos</h3>
       <div class="form-row">
         <div style="background-color: var(--color-superficie-elevada); padding: 1rem; border-radius: 8px;">
           <small style="color: var(--color-texto-secundario);">Inversión Proyectada</small>
@@ -113,7 +113,7 @@ function renderizarVista(solicitud, zona) {
         <div style="background-color: var(--color-superficie-elevada); padding: 1rem; border-radius: 8px;">
           <small style="color: var(--color-texto-secundario);">Compatibilidad Sectorial</small>
           <div style="font-size: 1.2rem; font-weight: 700; color: ${zona.sectoresPermitidos.includes(solicitud.sector) ? '#166534' : '#DC2626'};">
-            ${zona.sectoresPermitidos.includes(solicitud.sector) ? '✅ Sector Compatible' : '❌ Sector Incompatible'}
+            ${zona.sectoresPermitidos.includes(solicitud.sector) ? '<i class="fa-solid fa-circle-check"></i> Sector Compatible' : '<i class="fa-solid fa-circle-xmark"></i> Sector Incompatible'}
           </div>
           <small style="color: var(--color-texto-secundario);">Permitidos: <strong>${zona.sectoresPermitidos.join(', ')}</strong></small>
         </div>
@@ -123,7 +123,7 @@ function renderizarVista(solicitud, zona) {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
       <!-- Información General -->
       <div class="card">
-        <h3 style="font-size: 1.15rem; margin-bottom: 1rem;" data-i18n="detail.company_info">🏢 Información de la Empresa y Proyecto</h3>
+        <h3 style="font-size: 1.15rem; margin-bottom: 1rem;" data-i18n="detail.company_info"><i class="fa-solid fa-building"></i> Información de la Empresa y Proyecto</h3>
         <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.925rem;">
           <div><strong>Empresa:</strong> ${solicitud.nombreEmpresa}</div>
           <div><strong>Cédula Jurídica:</strong> ${solicitud.cedulaJuridica}</div>
@@ -133,7 +133,7 @@ function renderizarVista(solicitud, zona) {
           <div>
             <strong>Documentos Adjuntos:</strong>
             <ul style="margin-top: 0.35rem; padding-left: 1.25rem;">
-              ${(solicitud.adjuntosSimulados || []).map(f => `<li>📄 <a href="#">${f}</a></li>`).join('')}
+              ${(solicitud.adjuntosSimulados || []).map(f => `<li><i class="fa-solid fa-file-pdf"></i> <a href="#">${f}</a></li>`).join('')}
             </ul>
           </div>
         </div>
@@ -141,7 +141,7 @@ function renderizarVista(solicitud, zona) {
 
       <!-- Historial de Trazabilidad -->
       <div class="card">
-        <h3 style="font-size: 1.15rem; margin-bottom: 1rem;" data-i18n="detail.history">📜 Historial de Trazabilidad</h3>
+        <h3 style="font-size: 1.15rem; margin-bottom: 1rem;" data-i18n="detail.history"><i class="fa-solid fa-clock-rotate-left"></i> Historial de Trazabilidad</h3>
         <div>
           ${historialHtml}
         </div>
@@ -151,20 +151,20 @@ function renderizarVista(solicitud, zona) {
     <!-- Panel de Acciones de Clasificación Manual (Analista / Admin) -->
     ${esAnalistaOAdmin ? `
       <div class="card" style="border: 2px solid var(--color-primario);">
-        <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;" data-i18n="detail.actions">⚖️ Acciones de Clasificación del Analista</h3>
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;" data-i18n="detail.actions"><i class="fa-solid fa-scale-balanced"></i> Acciones de Clasificación del Analista</h3>
         <p style="font-size: 0.875rem; color: var(--color-texto-secundario); margin-bottom: 1.25rem;">
           Como analista, usted puede confirmar la recomendación de la IA o rectificar manualmente el estado de la solicitud. Toda decisión quedará auditada en el historial de trazabilidad.
         </p>
 
         <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
           <button id="btn-confirmar-ia" class="btn btn-success" data-i18n="detail.confirm_ai">
-            ✅ Confirmar Recomendación IA (${solicitud.clasificacionIA})
+            <i class="fa-solid fa-check"></i> Confirmar Recomendación IA (${solicitud.clasificacionIA})
           </button>
           <button id="btn-rechazar-solicitud" class="btn btn-danger" data-i18n="detail.reject_ai">
-            ❌ Rechazar Solicitud
+            <i class="fa-solid fa-xmark"></i> Rechazar Solicitud
           </button>
           <button id="btn-cambiar-clasificacion" class="btn btn-warning" data-i18n="detail.change_status">
-            ⚠️ Cambiar Clasificación Manualmente
+            <i class="fa-solid fa-pen-to-square"></i> Cambiar Clasificación Manualmente
           </button>
         </div>
       </div>
